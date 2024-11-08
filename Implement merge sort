@@ -1,0 +1,40 @@
+l=[1,420,3,4,100,7,18,8]
+def divide(l):
+    if len(l)>1:
+        mid=len(l)//2
+        left=l[:mid]
+        right=l[mid:]
+        divide(left),divide(right)
+        print(left,right)
+        conq(l,left,right)
+def conq(l,left,right):
+    li,ri,ind=0,0,0
+    while li<len(left) and ri<len(right):
+          if left[li]>right[ri]:
+               l[ind]=right[ri]
+               ind+=1
+               ri+=1 
+          else:
+             l[ind]=left[li]
+             ind+=1
+             li+=1 
+    while li<len(left):
+        l[ind]=left[li]
+        li+=1
+        ind+=1
+    while ri<len(right):
+        l[ind]=right[ri]
+        ri+=1
+        ind+=1 
+divide(l)
+print(l)         
+
+#Output#
+[1] [420]
+[3] [4]
+[1, 420] [3, 4]
+[100] [7]
+[18] [8]
+[7, 100] [8, 18]
+[1, 3, 4, 420] [7, 8, 18, 100]
+[1, 3, 4, 7, 8, 18, 100, 420]
