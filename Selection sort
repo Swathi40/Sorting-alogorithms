@@ -1,0 +1,10 @@
+L=[10,3,9,7,-2,4]
+for ind1 in range(len(L)-1):
+    li=ind1
+    for ind2 in range(ind1+1,len(L)):
+        if L[ind1]>L[ind2]:
+            li=ind2
+            L[li],L[ind1]=L[ind1],L[li]
+print(L)
+#Output#
+[-2, 3, 4, 7, 9, 10]
