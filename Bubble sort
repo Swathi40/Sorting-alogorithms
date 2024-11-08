@@ -3,4 +3,7 @@ for ind1 in range (len(L)-1):
     for ind2 in range(len(L)-1-ind1):
         if L[ind2]>L[ind2+1]:
             L[ind2],L[ind2+1]=L[ind2+1],L[ind2]
-print(L)            
+print(L)  
+
+#Output#
+[-10, 10, 20, 40, 70]
